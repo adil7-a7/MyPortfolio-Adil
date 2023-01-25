@@ -1,0 +1,331 @@
+:root
+{
+    --maincolor: black ;
+    --secondarycolor: #37B7ED;
+    --shadowcolor: black;
+    --secondaryshadowcolor: #37B7ED;
+
+    --textcolor: white;
+    --secondarytextcolor: black;
+    --captionbackground: white;
+    --captiontextcolor: black;
+
+}
+
+*
+{
+    scroll-behavior: smooth;
+    font-family: Raleway ,'Mulish' ,'Open Sans' ,'Verdana' ,'Arial';
+    margin: 0px;
+    padding: 0px;
+
+}
+
+/*nav bar menu*/
+nav
+{
+    background-color:var(--maincolor);
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    overflow: hidden;
+
+}
+
+/*items in the menu*/
+ul
+{
+    list-style-type: none;
+    display: flex;
+    align-items:center;
+    justify-content: space-around;
+    margin:0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+li
+{
+    justify-content: space-around;
+}
+
+/*styling my profile pic, defining size and shape*/
+li a
+{   
+    
+    list-style-type: none;
+    display: flex;
+
+    margin: 20px;
+    text-decoration: none;
+    color:var(--secondarycolor)
+    
+}
+
+/*hover in the nav menu items*/
+li a:hover
+{
+    background-color: var(--secondarycolor);
+    color: var(--maincolor);
+}
+
+.logo
+{
+    background-color: var(--secondarycolor);
+    color: var(--maincolor);
+    padding-right: 25px;
+    padding-left: 10px;
+    text-align: center;
+}
+
+#myNameinNav
+{   
+    margin-left: 10px;
+    margin-top: 10%;
+    text-align: center;
+    font-family: Unbounded, 'Raleway', 'Mulish' ,'Open Sans', 'Arial' ;
+    font-weight: bold;  
+
+
+}
+
+
+
+/*styling my profile pic, defining size and shape*/
+.mypic
+{   
+
+
+
+    overflow: hidden;
+    border: var(--secondarycolor);
+    border-radius: 20%;
+    width: max-content;
+    height: 200px;
+    overflow: hidden;
+  
+}
+
+.myName
+{
+    margin-left: 23px;
+    justify-content: center;
+    align-items: center;
+    color: var(--textcolor)
+}
+
+/*defining grid areas and size*/
+
+.intro
+{
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-around;
+    /*grid-template-rows: 50% 50%;*/
+    
+    box-shadow: -4px 6px 10px var(--secondarycolor);
+    
+
+    width: 80%;
+    margin-left: 15%;
+
+
+}
+
+#introAside
+{
+    grid-area: introAside ;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+#introArticle
+{
+    margin-top: 5%;
+    grid-area: introArticle;
+    background-color: var(--secondarycolor);
+    color: var(--secondarytextcolor);
+    width: max-content;
+    height: 10%;
+    
+}
+
+#introArticle > p
+{
+    font-weight: bolder;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+/*
+.page-section
+{
+    grid-area: page-section;
+}*/
+
+#aboutMeGrid
+{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: auto;
+    grid-template-areas: 'aboutMeAside aboutMeArticle';
+    padding-bottom: 50px;
+    
+}
+
+#aboutMeAside
+{
+    grid-area: aboutMeAside;
+    margin-left: 20%;
+    
+}
+
+#aboutMeArticle
+{
+    grid-area: aboutMeArticle;
+    margin-left: 5%;
+
+}
+
+/*border for aboutme work project resume contactme*/
+.asideBorder
+{
+    border-right: 5px var(--secondarycolor);
+    margin: 5px;
+}
+
+/* Projects/Work grid of 2 columns*/
+#workGrid
+{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: auto;
+    grid-template-areas: 'workAside workSection' 
+}
+
+
+#workAside
+{
+    grid-area: workAside;
+    margin-left: 20%;
+}
+
+.workSection
+{
+    grid-area: workSection;
+}
+
+
+/* Defining the project grid layout*/
+#projectsGrid
+{
+    
+   
+    display: grid;
+    margin-left: 5%;
+    grid-template-rows: 200px 200px 200px;
+    grid-template-columns: repeat(2,1fr);
+   
+    grid-template-areas: 
+    'project1 project1'           /*1st row*/
+    'project2 project3'          /*2nd row*/
+    'project4 project5';         /*3rd row*/
+}
+
+.projects
+{
+    margin: 5px;
+    cursor: pointer;
+}
+.projects:hover
+{
+    background
+}
+#project1
+{
+    grid-area: project1;
+    background-image: url("../images/02-portfolio-1.jpg") ;
+    width: inherit;
+    height: auto;
+    
+}
+
+
+#project2
+{
+    grid-area: project2 ;
+    background-image: url("../images/02-hero-bg.jpg");
+    width:inherit;
+    height: auto;
+}
+
+#project3
+{
+    grid-area: project3;
+    background-image: url("../images/02-portfolio-3.jpg");
+    width: inherit;
+    height: auto;
+}
+
+#project4
+{
+    grid-area: project4;
+    background-image: url("../images/02-portfolio-4.jpg");
+    width: inherit;
+    height: auto;
+
+}
+
+#project5
+{
+    grid-area: project5;
+    background-image: url("../images/02-portfolio-2.jpg");
+    width: inherit;
+    height: auto;
+}
+
+
+#projectcaption
+{
+    align-items: left;
+    padding: 10px;
+    margin-top: 10%;
+    background-color: var(--secondarycolor);
+    color: var(--maincolor);
+    width:fit-content;
+    text-align: left;
+}
+
+/*Resume Grid*/
+#resumeGrid
+{
+    display: grid;
+    grid-template-columns: 25% 75%;
+    /*-template-rows: auto;*/
+    grid-template-areas: 'asideResume' 'sectionResume';
+    margin-left: 5%;
+
+}
+
+#asideResume
+{
+    grid-area: asideResume;
+}
+
+.sectionResume
+{
+    grid-area: sectionResume;
+}
+
+
+footer
+{   
+    background-color: var(--maincolor);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
