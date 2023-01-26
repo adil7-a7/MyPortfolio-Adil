@@ -18,9 +18,18 @@
     font-family: Raleway ,'Mulish' ,'Open Sans' ,'Verdana' ,'Arial';
     margin: 0px;
     padding: 0px;
-
+    
 }
 
+main
+{
+    background-color: var(--maincolor);
+}
+
+.page-section
+{
+    color: var(--textcolor);
+}
 /*nav bar menu*/
 nav
 {
@@ -30,6 +39,7 @@ nav
     justify-content: space-between;
     width: 100%;
     overflow: hidden;
+    border-bottom: 2px solid var(--secondarycolor);
 
 }
 
@@ -70,6 +80,14 @@ li a:hover
     color: var(--maincolor);
 }
 
+li a:active
+{
+    background-color: var(--secondarycolor);
+    color:var(--textcolor);
+    font-weight: bolder;
+
+}
+
 .logo
 {
     background-color: var(--secondarycolor);
@@ -92,87 +110,84 @@ li a:hover
 
 
 
-/*styling my profile pic, defining size and shape*/
-.mypic
-{   
 
-
-
-    overflow: hidden;
-    border: var(--secondarycolor);
-    border-radius: 20%;
-    width: max-content;
-    height: 200px;
-    overflow: hidden;
-  
-}
-
-.myName
-{
-    margin-left: 23px;
-    justify-content: center;
-    align-items: center;
-    color: var(--textcolor)
-}
 
 /*defining grid areas and size*/
 
 .intro
 {
     padding-top: 100px;
-    display: flex;
-    justify-content: space-around;
-    /*grid-template-rows: 50% 50%;*/
+    display: grid;
+    justify-content: center;
+    grid-template-rows: auto;
+    grid-template-columns: 20% 80%;
+    grid-template-areas: 'introAside introArticle';
+    background-color: var(--maincolor);
     
-    box-shadow: -4px 6px 10px var(--secondarycolor);
     
-
-    width: 80%;
-    margin-left: 15%;
-
-
 }
 
 #introAside
 {
     grid-area: introAside ;
-    align-items: center;
-    justify-content: center;
+    
+
+    margin-left: %;
    
 }
 
 #introArticle
 {
-    margin-top: 5%;
+    margin-left: 15%;
     grid-area: introArticle;
-    background-color: var(--secondarycolor);
-    color: var(--secondarytextcolor);
-    width: max-content;
-    height: 10%;
+    color:var(--secondarycolor);
+    width: 80%;
     
 }
 
 #introArticle > p
 {
     font-weight: bolder;
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    
 }
 
+/*styling my profile pic, defining size and shape*/
+.mypic
+{   
+    overflow: hidden;
+    border: var(--secondarycolor);
+    border-radius: 20%;
+    height: 200px;
+    box-shadow: -4px 6px 10px var(--secondarycolor);
+  
+}
 
+#profilePic
+{   
+    text-align: center;
+    
+}
+
+.myName
+{
+    margin-top: 2%;
+    justify-content: center;
+    align-items: center;
+    color: var(--maincolor);
+}
+
+/*About Me Grid*/
 #aboutMeGrid
 {
     display: grid;
     grid-template-columns: 20% 80%;
     grid-template-rows: auto;
     grid-template-areas: 'aboutMeAside aboutMeArticle';
-    padding-bottom: 50px;
     margin-top: 5%;
     
 }
 
+/*Defining About me 1st column Grid Area*/
 #aboutMeAside
 {
     grid-area: aboutMeAside;
@@ -180,6 +195,7 @@ li a:hover
     
 }
 
+/*Defining About me 2nd column Grid Area*/
 #aboutMeArticle
 {
     grid-area: aboutMeArticle;
@@ -193,8 +209,7 @@ li a:hover
 /*border for aboutme work project resume contactme*/
 .asideBorder
 {
-    border-right: 5px solid var(--secondarycolor);
-    display: flex;
+    border-right: 4px solid var(--secondarycolor);
     margin-left: 2%;
 }
 
@@ -204,7 +219,8 @@ li a:hover
     display: grid;
     grid-template-columns: 20% 80%;
     grid-template-rows: auto;
-    grid-template-areas: 'workAside workSection' 
+    grid-template-areas: 'workAside workSection' ;
+    margin-top: 5%;
 }
 
 
@@ -240,10 +256,12 @@ li a:hover
 {
     margin: 5px;
     cursor: pointer;
+    transition: box-shadow 1s;
 }
 .projects:hover
 {
-    background
+     box-shadow: -6px -6px 3px var(--secondarycolor);
+    
 }
 #project1
 {
@@ -294,8 +312,8 @@ li a:hover
     align-items: left;
     padding: 10px;
     margin-top: 10%;
-    background-color: var(--secondarycolor);
-    color: var(--maincolor);
+    background-color: var(--maincolor);
+    color: var(--secondarycolor);
     width:fit-content;
     text-align: left;
 }
@@ -321,11 +339,13 @@ li a:hover
 {
 
     grid-area: articleContactMe;
+    
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     text-decoration: none;
-    text-align: center;
+    text-align: center; 
+    
 
 }
 
@@ -339,7 +359,7 @@ li a:hover
 {
     align-items: center;
     justify-content: center;
-    color: var(--maincolor);
+    color: var(--textcolor);
     margin-top: 5%;
 }
 
@@ -359,31 +379,31 @@ li a:hover
 */
 
 /*Resume Grid*/
-#resumeGrid
+#resume
 {
+
     display: grid;
     grid-template-columns: 20% 80%;
     grid-template-rows: auto;
     grid-template-areas: 'asideResume articleResume';
     margin-top: 5%;
-
+    
 }
 
 #asideResume
 {
     grid-area: asideResume;
-    margin-left: 5%;
+
 }
 
 #articleResume
 {
     grid-area: articleResume;
-    margin-left: 5%;
-    align-items: center;
-    justify-content: center ;
+    margin-top: 10%;
+    
 }
 
-
+/*
 footer
 {   
     display: flex;
@@ -391,4 +411,4 @@ footer
     justify-content: center;
     text-align: center;
     height:max-content;
-}
+} */
