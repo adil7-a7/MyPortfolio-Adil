@@ -48,16 +48,9 @@ ul
 {
     list-style-type: none;
     display: flex;
-    align-items:center;
     justify-content: space-around;
-    margin:0px;
-    padding: 0px;
-    overflow: hidden;
-}
+    margin-right: 30%;
 
-li
-{
-    justify-content: space-around;
 }
 
 /*styling my profile pic, defining size and shape*/
@@ -66,28 +59,21 @@ li a
     
     list-style-type: none;
     display: flex;
-
+    font-weight: bolder;
     margin: 20px;
     text-decoration: none;
     color:var(--secondarycolor)
     
 }
 
-/*hover in the nav menu items*/
+/*hover in the links nav menu items*/
 li a:hover
 {
     background-color: var(--secondarycolor);
     color: var(--maincolor);
 }
 
-li a:active
-{
-    background-color: var(--secondarycolor);
-    color:var(--textcolor);
-    font-weight: bolder;
-
-}
-
+/*defining style for the logo area in the left side of the nav, in this case my name*/
 .logo
 {
     background-color: var(--secondarycolor);
@@ -97,6 +83,7 @@ li a:active
     text-align: center;
 }
 
+/*defining style for the text in my logo in this case my name*/
 #myNameinNav
 {   
     margin-left: 10px;
@@ -109,11 +96,7 @@ li a:active
 }
 
 
-
-
-
 /*defining grid areas and size*/
-
 .intro
 {
     padding-top: 100px;
@@ -123,32 +106,38 @@ li a:active
     grid-template-columns: 20% 80%;
     grid-template-areas: 'introAside introArticle';
     background-color: var(--maincolor);
-    
-    
+    margin-left: 20%;
 }
 
 #introAside
 {
     grid-area: introAside ;
-    
-
-    margin-left: %;
+    margin-left: 4%;
+    color: var(--textcolor);
+    display:flex;
    
 }
 
 #introArticle
 {
-    margin-left: 15%;
+    margin-left: 10%;
     grid-area: introArticle;
-    color:var(--secondarycolor);
+    color:var(--textcolor);
     width: 80%;
-    
+    font-family: Mulish, 'Unbounded', 'Open Sans';
+    box-shadow: 0px 0px 20px var(--secondarycolor);
+    border-radius: 5px;
+    display: flex;
+  
 }
 
-#introArticle > p
+
+#introText
 {
-    font-weight: bolder;
-    
+    margin-top: 7%;
+    text-align: justify;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 /*styling my profile pic, defining size and shape*/
@@ -159,21 +148,20 @@ li a:active
     border-radius: 20%;
     height: 200px;
     box-shadow: -4px 6px 10px var(--secondarycolor);
-  
 }
 
 #profilePic
 {   
     text-align: center;
-    
 }
 
+/*Caption  below my profile Pic*/
 .myName
 {
-    margin-top: 2%;
+    margin-top: 5%;
     justify-content: center;
     align-items: center;
-    color: var(--maincolor);
+    color: var(--textcolor);
 }
 
 /*About Me Grid*/
@@ -203,6 +191,8 @@ li a:active
     align-items: center;
     margin-left: 5% ;
     margin-top: 5px;
+    text-align: justify;
+    margin-right: 8%;
 
 }
 
@@ -210,7 +200,8 @@ li a:active
 .asideBorder
 {
     border-right: 4px solid var(--secondarycolor);
-    margin-left: 2%;
+    display: flex;
+    margin-right: 15%;
 }
 
 /* Projects/Work grid of 2 columns*/
@@ -219,33 +210,31 @@ li a:active
     display: grid;
     grid-template-columns: 20% 80%;
     grid-template-rows: auto;
-    grid-template-areas: 'workAside workSection' ;
+    grid-template-areas: 'workAside workArticle' ;
     margin-top: 5%;
 }
 
-
+/* Defining margins for Work aside */
 #workAside
 {
     grid-area: workAside;
     margin-left: 20%;
 }
 
-.workSection
+#workArticle
 {
-    grid-area: workSection;
+    grid-area: workArticle;
 }
 
 
-/* Defining the project grid layout*/
+/* Defining the grid layout for the project/work images*/
 #projectsGrid
 {
-    
-   
     display: grid;
     margin-left: 5%;
+    margin-right: 7%;
     grid-template-rows: 200px 200px 200px;
     grid-template-columns: repeat(2,1fr);
-   
     grid-template-areas: 
     'project1 project1'           /*1st row*/
     'project2 project3'          /*2nd row*/
@@ -256,11 +245,11 @@ li a:active
 {
     margin: 5px;
     cursor: pointer;
-    transition: box-shadow 1s;
+    transition: box-shadow 0.8s;
 }
 .projects:hover
 {
-     box-shadow: -6px -6px 3px var(--secondarycolor);
+    box-shadow: -4px 3px 3px var(--secondarycolor);
     
 }
 #project1
@@ -269,12 +258,11 @@ li a:active
     background-image: url("../images/02-portfolio-1.jpg") ;
     width: inherit;
     height: auto;
-    
 }
 
 
 #project2
-{
+{   
     grid-area: project2;
     background-image: url("../images/02-hero-bg.jpg");
     width:inherit;
@@ -311,11 +299,19 @@ li a:active
 {
     align-items: left;
     padding: 10px;
-    margin-top: 10%;
+    margin-top: 7%;
     background-color: var(--maincolor);
     color: var(--secondarycolor);
     width:fit-content;
     text-align: left;
+    border: 2px solid var(--secondarycolor);
+    border-left: none;
+    transition: transform 0.9s;
+}
+
+#projectcaption:hover
+{
+    transform: scale(1.1);
 }
 
 /*Contact Me Grid */
@@ -325,7 +321,7 @@ li a:active
     grid-template-columns: 20% 80%;
     grid-template-rows: auto;
     grid-template-areas: 'asideContactMe articleContactMe';
-    margin-top: 5%;
+    margin-top: 10%;
 }
 
 #asideContactMe
@@ -337,22 +333,25 @@ li a:active
 
 .articleContactMe
 {
-
     grid-area: articleContactMe;
-    
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     text-decoration: none;
     text-align: center; 
     
-
 }
 
+/*setting the icons in contact me to the secondary color*/
 .contactIcons
 {
     color: var(--secondarycolor);
-   
+    transition: transform 1.2s;
+}
+
+.contactIcons:hover
+{
+    transform: scale(1.3);
 }
 
 .contactCaption
@@ -360,7 +359,7 @@ li a:active
     align-items: center;
     justify-content: center;
     color: var(--textcolor);
-    margin-top: 5%;
+    margin-top: 10%;
 }
 
 .articleContactMe a
@@ -370,45 +369,68 @@ li a:active
 }
 
 
-#contactRow
-{
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-}
-*/
-
 /*Resume Grid*/
-#resume
+#resumeGrid
 {
 
     display: grid;
     grid-template-columns: 20% 80%;
     grid-template-rows: auto;
     grid-template-areas: 'asideResume articleResume';
-    margin-top: 5%;
+    margin-top: 10%;
+    margin-bottom: 15%;
     
 }
 
 #asideResume
 {
     grid-area: asideResume;
-
+    margin-left: 20%;
 }
 
 #articleResume
-{
+{   
     grid-area: articleResume;
-    margin-top: 10%;
-    
+    margin-left: 30%;
+    align-items: center;
+    justify-content: center ;
 }
 
-/*
+#articleResume a
+{
+    color: var(--secondarycolor);
+}
+
 footer
 {   
-    display: flex;
+    padding-top: 2%;
+    border-top: 5px solid var(--secondarycolor); 
     background-color: var(--maincolor);
+    color: var(--textcolor);
     justify-content: center;
     text-align: center;
-    height:max-content;
-} */
+    padding-bottom: 4%;
+} 
+
+/* Tablet styling */
+
+@media screen and (max-width:768px)
+{
+
+.asideBorder
+{
+    border-right: 3px solid var(--secondarycolor);
+    display: flex;
+    margin-right: 5%;
+}
+/* Aside Styles */
+}
+
+/* Mobile styling */
+
+@media screen and (max-width:480px)
+{
+
+    /* Mobile Header Styles */
+
+}
