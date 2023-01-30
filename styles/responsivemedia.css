@@ -1,0 +1,98 @@
+* Tablet styling */
+
+@media screen and (max-width:768px)
+{
+
+    .asideBorder
+    {
+        border-right: 3px solid var(--secondarycolor);
+        display: flex;
+        margin:0;
+    }
+
+    /* Aside Styles */
+
+}
+
+/* Mobile styling */
+@media screen and (max-width:480px)
+{
+
+    h3
+    {
+        font-size: 50px;
+    }
+
+    h3 
+    {
+        font-size: 80px;
+    }
+    /* Mobile Header Styles */
+
+    intro
+    {
+    padding-top: 2%;
+    display: grid;
+    justify-content: center;
+    grid-template-rows: auto;
+    grid-template-columns: 20% 80%;
+    grid-template-areas: 'introAside introArticle';
+    background-color: var(--maincolor);
+    margin-left: 10%;
+    }
+
+    #introAside
+    {
+        grid-area: introAside ;
+        margin-left: 2%;
+        color: var(--textcolor);
+        display:flex;
+    }
+
+    #introArticle
+    {
+        margin-left: 10%;
+        grid-area: introArticle;
+        color:var(--textcolor);
+        width: 80%;
+        font-family: Mulish, 'Unbounded', 'Open Sans';
+        box-shadow: 0px 0px 20px var(--secondarycolor);
+        border-radius: 5px;
+        display: flex;
+    
+    }
+
+
+    #introText
+    {
+        margin-top: 7%;
+        text-align: justify;
+        margin-left: 5%;
+        margin-right: 5%;
+        
+    }
+
+    .mypic
+    {   
+        overflow: hidden;
+        border: var(--secondarycolor);
+        border-radius: 20%;
+        height: 100px;
+        box-shadow: -4px 6px 10px var(--secondarycolor);
+    }
+
+    #profilePic
+    {   
+        text-align: center;
+    }
+
+    /*Caption  below my profile Pic*/
+    .myName
+    {
+        margin-top: 5%;
+        justify-content: center;
+        align-items: center;
+        color: var(--textcolor);
+    }
+
+}

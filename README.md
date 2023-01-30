@@ -1,9 +1,7 @@
 # Portfolio Website - Adil Seco
 
 ## Overview
-As part of the weekly challenge of the Front-End Development Bootcamp I developed a website design for portfolio.
-
-##
+As part of the weekly challenge of the Front-End Development Bootcamp I developed a website design for my portfolio.
 
 
 ## User Acceptance Criteria
@@ -13,6 +11,23 @@ As part of the weekly challenge of the Front-End Development Bootcamp I develope
 * When presented with the your first application then that application's image should be larger in size than the others.
 * When presented with the your first application then that application's image should be larger in size than the others.
 * When the page is resized or viewed on various screens and devices then the layout is responsive and adapts to my viewport.
+
+## Example 
+![01-css-challenge-demo](https://user-images.githubusercontent.com/117782725/215363899-1b075694-d6a7-43d2-a671-48139b0db6fd.gif)
+
+## Brand Colors
+ I have used a combination of blue and black.
+
+ I chose the following colors for my portolfio because:
+ Blue:  evokes the emotion of trust, reliability at a subconsious level.
+ Black: evokes and associates with prestige, and premium. 
+
+## Screenshot of my portfolio
+<img width="1109" alt="myPortolfio_Screenshot" src="https://user-images.githubusercontent.com/117782725/215371525-50e70078-35f9-421b-888a-8291643ee31b.png">
+
+
+
+
 
 
 

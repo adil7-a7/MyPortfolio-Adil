@@ -372,14 +372,12 @@ li a:hover
 /*Resume Grid*/
 #resumeGrid
 {
-
     display: grid;
     grid-template-columns: 20% 80%;
     grid-template-rows: auto;
     grid-template-areas: 'asideResume articleResume';
     margin-top: 10%;
     margin-bottom: 15%;
-    
 }
 
 #asideResume
@@ -411,26 +409,3 @@ footer
     text-align: center;
     padding-bottom: 4%;
 } 
-
-/* Tablet styling */
-
-@media screen and (max-width:768px)
-{
-
-.asideBorder
-{
-    border-right: 3px solid var(--secondarycolor);
-    display: flex;
-    margin-right: 5%;
-}
-/* Aside Styles */
-}
-
-/* Mobile styling */
-
-@media screen and (max-width:480px)
-{
-
-    /* Mobile Header Styles */
-
-}
