@@ -22,7 +22,7 @@ As part of the weekly challenge of the Front-End Development Bootcamp I develope
  * Blue:  evokes the emotion of trust, reliability at a subconsious level.
  * Black: evokes and associates with prestige and premium. 
 
-## Screenshot
+## Screenshot in Desktop width
 <img width="1109" alt="myPortolfio_Screenshot" src="https://user-images.githubusercontent.com/117782725/215371525-50e70078-35f9-421b-888a-8291643ee31b.png">
 
 ## Screenshot in tablet width
