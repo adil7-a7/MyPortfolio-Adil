@@ -47,7 +47,7 @@ ul {
 
 }
 
-/*styling my profile pic, defining size and shape*/
+/*removing deocoration from list and displaying list as flex in the navbar*/
 li a {
 
     list-style-type: none;
@@ -220,18 +220,20 @@ li a:hover {
     grid-template-rows: 200px 200px 200px;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
-        'project1 project1'
-        /*1st row*/
-        'project2 project3'
-        /*2nd row*/
-        'project4 project5';
-    /*3rd row*/
+        'project1 project1'     /*1st row*/
+        'project2 project3'     /*2nd row*/
+        'project4 project5';    /*3rd row*/
 }
 
 .projects {
     margin: 5px;
     cursor: pointer;
     transition: box-shadow 0.8s;
+}
+
+.projects a
+{
+    text-decoration: none;
 }
 
 .projects:hover {
@@ -385,17 +387,10 @@ li a:hover {
 
 
 /*Style for tablets*/
-@media screen and (max-width:768px) {
+@media screen and (max-width:768px) 
+{
 
-    .asideBorder {
-        border-right: 2px solid var(--secondarycolor);
-        display: flex;
-        margin: 0;
-    }
-
-    /* Aside Styles */
-
-    /* defining font size */
+    /* defining font size for tablet*/
     h4 {
         font-size: 0.8em;
     }
@@ -405,11 +400,11 @@ li a:hover {
     }
 
     h2 {
-        font-size: 1.3em;
+        font-size: 1.4em;
     }
 
     h1 {
-        font-size: 1.2em;
+        font-size: 1.4em;
     }
 
     /*nav bar menu for tablet*/
@@ -465,29 +460,158 @@ li a:hover {
         box-shadow: -4px 6px 10px var(--secondarycolor);    
     }
 
+     /*About Me Grid for Tablet*/
+     #aboutMeGrid {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+            'aboutMeAside'
+            /*1st row*/
+            'aboutMeArticle';
+        /*2nd row*/
+        margin-top: 5%;
+    }
 
+    /* About me Article text for Tablet */
+    #aboutMeArticle {
+        grid-area: aboutMeArticle;
+        justify-content: center;
+        align-items: center;
+        margin-left: 12%;
+        margin-top: 0.1vh;
+        text-align: justify;
+        margin-right: 10%;
+    
+    }
 
+    #workGrid {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+            'workAside'
+            /*1st row*/
+            'workArticle';
+        /*2nd row*/
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+    }
+
+    /*Centering Aside Text and Items to Centre for Tablet*/
+    .aboutMeAside .workAside .asideContactMe .asideResume {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-left: none;
+    }
+
+    .projects
+    {
+        margin: 0vh;
+    }
+
+    /* Adding box shadow by default to project pictures to show separation */
+    .projects 
+    {
+        margin: 1vh;
+        box-shadow: 0px 0px 12px var(--secondarycolor);
+    }
+
+    /* removing box shadow from hover */
+    .projects:hover
+    {
+        box-shadow: none
+    }
 
     /* Defining the grid layout as rows for Tablet*/
-    #projectsGrid {
+    #projectsGrid 
+    {
         display: grid;
-        margin-left: 7%;
-        margin-right: 7%;
+        margin-left: -20%;
+        margin-right: -20%;
         grid-template-rows: auto;
         grid-template-columns: auto;
         grid-template-areas:
-            'project1'  /*1st row*/
-            'project2'  /*2nd row*/
-            'project3'  /*3rd row*/
-            'project4'  /*4th row*/
-            'project5'; /*5th row*/
+        'project1' 
+        'project2'
+        'project3' 
+        'project4' 
+        'project5';       
+        grid-gap: 1em;
+    }
 
-        grid-gap: 0.5em;
+
+    /*Contact Me Grid */
+    #contactMeGrid {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+            'asideContactMe'    /*1st row*/
+            'articleContactMe'; /*2nd row*/
+        margin-top: 10%;
+    }
+    
+    /*Creating a Grid for the Icons of 2/2 columns and rows*/
+    .articleContactMe {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+            'call email'        /*1st row*/
+            'linkedin github';   /*2nd row*/
+            
+        
+        grid-gap: 5em;
+
+    }
+
+    .contactCaption {
+        align-items: center;
+        justify-content: center;
+        color: var(--textcolor);
+        margin-top: 2%;
+    }
+
+    /*Resume Grid for Mobile*/
+    #resumeGrid {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+            'asideResume'
+            /*1st row*/
+            'articleResume';
+        /*2nd row*/
+        margin-top: 10%;
+        margin-bottom: 5%;
+    }
+    #asideResume
+    {
+        margin-bottom: 2%;
+    }
+
+    #articleResume {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 20%;
+
+    }
+
+    .asideBorder {
+        border-bottom: 2px solid var(--secondarycolor);
+        display: flex;
+        margin-bottom: 5%;
+        margin-top: 5px;
+        border-right: none;
     }
 
 }
 
-/*Style for Mobile*/
+/*Style for Mobiles*/
 @media screen and (max-width:480px) {
 
     .asideBorder {
@@ -521,7 +645,23 @@ li a:hover {
         grid-template-columns: auto;
         grid-template-areas: 'logo' 'navMenulist';
         position: relative;
+    }
 
+    /* List items for Mobile nav */
+    ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        margin-right: 0.5%;
+    
+    }
+
+   li a 
+   {
+        margin: 20px;
+        text-decoration: none;
+        color: var(--secondarycolor);
+        width: fit-content;
     }
 
     .logo {
@@ -544,56 +684,65 @@ li a:hover {
         justify-content: space-between;
     }
 
-    /* Displaying each area as a row*/
+    /* Displaying each area as a row for mobile*/
     .intro {
 
         display: grid;
-        /*justify-content: center;
-        align-items: center; */
+        grid-template-columns: auto;
+        grid-template-rows: auto;
         grid-template-areas:
             'introAside' /* 1st row*/
             'introArticle'; /* 2nd row*/
-        background-color: var(--maincolor);
-        margin-left: 5%;
-    }
-
-    #introAside {
-        grid-area: inherit;
-        margin-bottom: 5%;
-    }
-
-    #introArticle {
-        grid-area: inherit;
-        color: var(--textcolor);
-        margin-bottom: 10%;
-        margin-left: 7%;
-        margin-right: 7%;
-        flex-wrap: wrap;
-    }
-
-    #introText {
-        margin-top: 7%;
-        text-align: justify;
-        margin-left: 5%;
-        margin-right: 5%;
-        flex-wrap: wrap;
+       
     }
 
     .mypic {
         overflow: hidden;
         border: var(--secondarycolor);
         border-radius: 20%;
-        height: 25vh;
-        box-shadow: -4px 6px 10px var(--secondarycolor);
+        height: 23vh;
+        box-shadow: -4px 3px 10px var(--secondarycolor);
     }
 
+    .myName
+    {
+        word-wrap:normal;
+    }
     #profilePic {
         text-align: center;
     }
 
-    /*Caption below my profile Pic*/
-    .myName {
+
+    #introAside {
+        grid-area: inherit;
+        margin-bottom: 5%;
+    }
+
+
+    #introArticle {
+        grid-area: inherit;
+        color: var(--textcolor);
         margin-top: 5%;
+        margin-bottom: 10%;
+        margin-left: 7%;
+        margin-right: 7%;
+        word-wrap: wrap;
+    }
+
+    #introText {
+        margin-top: 7%;
+        margin-bottom: 7%;
+        margin-left: 7%;
+        margin-right: 7%;
+        flex-wrap: wrap;
+        text-align: justify;
+
+    }
+
+    
+    /*Caption below my profile Pic for mobile*/
+    .myName {
+        margin-top: 2%;
         justify-content: center;
         align-items: center;
         color: var(--textcolor);
@@ -613,6 +762,11 @@ li a:hover {
         margin-top: 5%;
     }
 
+    #aboutMeAside
+    {
+        margin-bottom: 3vh;
+    }
+
     /* About me Article text for Mobile */
     #aboutMeArticle {
         grid-area: aboutMeArticle;
@@ -621,7 +775,7 @@ li a:hover {
         margin-left: 12%;
         margin-top: 0.1vh;
         text-align: justify;
-        margin-right: 10%;
+        margin-right: 12%;
     
     }
 
@@ -649,7 +803,7 @@ li a:hover {
 
     /* Adding box shadow for mobile version without having to hover */
     .projects {
-        margin: 5px;
+        margin: 1vh;
         box-shadow: 0px 0px 12px var(--secondarycolor);
     }
 
@@ -694,9 +848,6 @@ li a:hover {
         margin-top: 10%;
     }
 
-
-
-
     /*Creating a Grid for the Icons to stack up as rows*/
     .articleContactMe {
         display: grid;
@@ -709,7 +860,7 @@ li a:hover {
             /*2nd row*/
             'linkedin';
         /*3rd row*/
-        grid-gap: 1.5em;
+        grid-gap: 4em;
 
     }
 
@@ -741,6 +892,6 @@ li a:hover {
     margin-left: 20%;
     }
 
-    /*Contact Icons resize*/
+    
     
 }
